@@ -7,17 +7,16 @@ class LoginController < ApplicationController
   	
   def attempt_login 
   	if params[:username].present? && params[:password].present?
-  		found_user = User.where(:username=>params[:username])
-  		if found_user
-  			auth_user = found_user.authenticate(params[:password])
-  		end	
+  		found_user = Hospital.where(:username=>params[:username],:password=>params[:password]).first
+  		
   	end	
-  	if auth_user
+
+  	if found_user
   		flash[:notice]="logged in"
-  		redirect_to('')
+  		redirect_to(:action=>'panel')
   	else
   		flash[:notice]="invalid details"
-  		redirect_to('login')	
+  		redirect_to(:action=>'login')
   	end
   end	
 
