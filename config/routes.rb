@@ -8,4 +8,7 @@ Rails.application.routes.draw do
 
   # Chashmeet Singh Routes
   match "/:controller(/:action(/:id))",:via => [:get,:post]
+
+    #asset routes
+  match "/:controller(/:action(/:id))",:via => [:get,:post]
   end
