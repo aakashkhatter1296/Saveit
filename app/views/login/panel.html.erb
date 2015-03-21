@@ -3,19 +3,56 @@
 
     <head>
 	<title>LOG IN</title>
-	<link rel="stylesheet" href="/assets/stylesheets/foundation.min.css"/>
-    <link rel="stylesheet" href="/assets/stylesheets/normalize.css"/>
-    <script src="/assets/javascripts/foundation.min.js"></script>
+	<link rel="stylesheet" href="../../assets/stylesheets/foundation.min.css"/>
+    <link rel="stylesheet" href="../../assets/stylesheets/normalize.css"/>
+    <script src="../../assets/javascripts/foundation.min.js"></script>
         
+                
         <style>
         
              .center {
-        text-align:center;   
+                 
+                 text-align:center;   
+                 margin-top:-21px;
+                margin-left:27vw; 
     }
+            
+            html {
+        background: url("http://hd.wallpaperswide.com/thumbs/medical_symbol-t2.jpg");
+               -webkit-background-size: cover;
+              -moz-background-size: cover;
+            -o-background-size: cover;
+          background-size: cover;
+    }
+    
          .name:hover {
     
        color:#000;
     }
+            
+            .count {
+            
+                font-size:18vmax;
+                padding:0;
+                margin:0;
+                font-weight:bold;
+            }
+            
+            #minus {
+            
+                margin-top:0px;
+            }
+            
+            .wrap {
+                
+                width:50vw;
+                padding-top:10vh;
+               background:rgba(0,0,0,0.15);
+                margin-top:0;
+                text-align:center;
+                
+            }
+            
         </style>
     </head>
     
@@ -58,7 +95,7 @@
   </section>
 </nav>
     <div class="center">
-
+<div class="wrap">
 <div id ="notification_panel">
 	<h1>Notification Panel</h1>
 	<div id ="notifications">
@@ -66,12 +103,13 @@
 	</div>
 </div>
 
-<<<<<<< HEAD
+
 <div id="count-container">
-	<input type="button" id ="plus">Plus</button>
-	<div id="count"><%= @hospital.ambulance_count %></div>
-	<input type="button" id="minus">Minus</button>	
+	<button type="button" class="large round button" id ="plus">Plus</button>
+	<div id="count" class="count"><%= @hospital.ambulance_count %></div>
+	<button type="button" class="large round button" id="minus">Minus</button>	
 </div>
+    </div>
 <script>
 	$("#plus").click(function(){
 		$.post("/login/plus", function(data) {
@@ -84,12 +122,3 @@
 		});
 	});
 </script>
-=======
-<div id="count">
-	<input type="button">Plus</button>
-	<input type="button">Minus</button>	
-</div> 
-</div>
-</body>
-</html>
->>>>>>> 9bab779f205f314d891a61be7f8f4a49668b4596
