@@ -8,7 +8,7 @@ class LoginController < ApplicationController
   def attempt_login 
   	if params[:username].present? && params[:password].present?
   		@found_user = Hospital.where(:username=>params[:username],:password=>params[:password]).first
-  		
+  		cookies[:user_id] = @found_user.id
   	end	
 
   	if @found_user
@@ -22,5 +22,6 @@ class LoginController < ApplicationController
   end	
 
   def panel
+     @hospital = Hospital.find(cookies[:user_id])
   end
 end
