@@ -3,9 +3,9 @@
 
 <head>
 	<title>LOG IN</title>
-	<link rel="stylesheet" href="../../assets/stylesheets/foundation.min.css"/>
-    <link rel="stylesheet" href="../../assets/stylesheets/normalize.css"/>
-    <script src="../../assets/javascripts/foundation.min.js"></script>
+	<link rel="stylesheet" href="/assets/stylesheets/foundation.min.css"/>
+    <link rel="stylesheet" href="/assets/stylesheets/normalize.css"/>
+    <script src="/assets/javascripts/foundation.min.js"></script>
 <style>
     .center {
         text-align:center;   
@@ -13,7 +13,21 @@
     
     .fields {
         width:20vw;
-        margin-left:40vw;
+        //margin-left:40vw;
+    }
+    
+    body {
+        background: #dfdfdf;
+    }
+    
+    .panel{
+        
+        border-radius:5px;
+        margin-top: 12vh;
+        width: 24vw;
+        margin-left:39vw;
+        padding:25px;
+        padding-top:30px;
     }
     </style>
 </head>
@@ -23,10 +37,10 @@
         <nav class="top-bar" data-topbar role="navigation">
   <ul class="title-area">
     <li class="name">
-      <h1><a href="#">Hospitals</a></h1>
+      <h1><a href="#">Hospitals Interface</a></h1>
     </li>
      <!-- Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone -->
-    <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
+    <li class="toggle-topbar menu-icon"><a href="#"><span>LOG IN</span></a></li>
   </ul>
 
   <section class="top-bar-section">
@@ -54,14 +68,15 @@
 </nav>
         
         
-    <div class="center">    <% flash.each do |name,msg| %>
+    <div class="panel center">    <% flash.each do |name,msg| %>
 	<%= content_tag :div,msg,class:name %>
 <% end %>
 
 <%= form_tag(:action=>'attempt_login' ) do |f| %>
 	Username:<%= text_field_tag(:username) %><br>
+
 	Password:<%= password_field_tag(:password) %><br>
-        </div>
+        
         <%= submit_tag("Login", :class => "small round button") %>
 
         <% end %>
