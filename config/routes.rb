@@ -7,5 +7,5 @@ Rails.application.routes.draw do
   post 'api/hospital', to: 'api#hospital'
 
   # Chashmeet Singh Routes
-  match "/:controller(/:action(/:id))",:via => ["get","post"]
+  match "/:controller(/:action(/:id))",:via => [:get,:post]
   end
