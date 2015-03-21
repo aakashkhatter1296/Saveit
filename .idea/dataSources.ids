@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component name="dataSourceStorage">
+  <data-source name="Rails hosp: development" uuid="d6a84ac2-277e-4f79-9da1-7b330d9d91b3">
+    <database-info product="" version="" jdbc-version="" driver-name="" driver-version=""/>
+  </data-source>
+  <data-source name="Rails hosp: test" uuid="04ae6189-eca4-4095-9734-de985023010a">
+    <database-info product="" version="" jdbc-version="" driver-name="" driver-version=""/>
+  </data-source>
+  <data-source name="Rails hosp: production" uuid="abedc810-3ebf-42f3-b687-382ac24ac398">
+    <database-info product="" version="" jdbc-version="" driver-name="" driver-version=""/>
+  </data-source>
+</component>

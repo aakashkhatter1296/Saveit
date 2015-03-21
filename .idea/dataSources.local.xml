@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="dataSourceStorageLocal">
+    <data-source name="Rails hosp: development" uuid="d6a84ac2-277e-4f79-9da1-7b330d9d91b3">
+      <first-sync>true</first-sync>
+      <user-name>root</user-name>
+    </data-source>
+    <data-source name="Rails hosp: test" uuid="04ae6189-eca4-4095-9734-de985023010a">
+      <first-sync>true</first-sync>
+      <user-name>root</user-name>
+    </data-source>
+    <data-source name="Rails hosp: production" uuid="abedc810-3ebf-42f3-b687-382ac24ac398">
+      <first-sync>true</first-sync>
+      <user-name>hosp</user-name>
+      <user-password>df96df8fdf97df8adfefdfe4dffcdff1df8ddfe2dfe5dff9dffadff5dfeedfebdffedfebdfe8dfebdff9dfefdff5dffadfebdff9dff9dffddfe5dff8dfeedf8ddff7df8adf8fdf94</user-password>
+    </data-source>
+  </component>
+</project>
