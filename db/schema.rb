@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150321120550) do
+ActiveRecord::Schema.define(version: 20150321224158) do
 
   create_table "hospitals", force: :cascade do |t|
     t.string   "name",            limit: 255
@@ -25,4 +25,17 @@ ActiveRecord::Schema.define(version: 20150321120550) do
     t.datetime "updated_at",                  null: false
   end
 
+  create_table "routes", force: :cascade do |t|
+    t.integer  "hosp_id",     limit: 4
+    t.float    "latitude",    limit: 24
+    t.float    "longitude",   limit: 24
+    t.string   "device_id",   limit: 255
+    t.integer  "hospital_id", limit: 4
+    t.datetime "created_at",              null: false
+    t.datetime "updated_at",              null: false
+  end
+
+  add_index "routes", ["hospital_id"], name: "index_routes_on_hospital_id", using: :btree
+
+  add_foreign_key "routes", "hospitals"
 end
