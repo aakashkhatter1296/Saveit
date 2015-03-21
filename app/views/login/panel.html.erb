@@ -6,7 +6,20 @@
 	</div>
 </div>
 
-<div id="count">
-	<input type="button">Plus</button>
-	<input type="button">Minus</button>	
-</div> 
+<div id="count-container">
+	<input type="button" id ="plus">Plus</button>
+	<div id="count"><%= @hospital.ambulance_count %></div>
+	<input type="button" id="minus">Minus</button>	
+</div>
+<script>
+	$("#plus").click(function(){
+		$.post("/login/plus", function(data) {
+			$("#count").html(data.ambulance_count);
+		});
+	});
+	$("#minus").click(function(){
+		$.post("/login/minus", function(data) {
+			$("#count").html(data.ambulance_count);
+		});
+	});
+</script>
