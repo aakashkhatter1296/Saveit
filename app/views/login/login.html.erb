@@ -1,10 +1,70 @@
-<% flash.each do |name,msg| %>
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>LOG IN</title>
+	<link rel="stylesheet" href="../../assets/stylesheets/foundation.min.css"/>
+    <link rel="stylesheet" href="../../assets/stylesheets/normalize.css"/>
+    <script src="../../assets/javascripts/foundation.min.js"></script>
+<style>
+    .center {
+        text-align:center;   
+    }
+    
+    .fields {
+        width:20vw;
+        margin-left:40vw;
+    }
+    </style>
+</head>
+    
+    <body>
+        
+        <nav class="top-bar" data-topbar role="navigation">
+  <ul class="title-area">
+    <li class="name">
+      <h1><a href="#">Hospitals</a></h1>
+    </li>
+     <!-- Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone -->
+    <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
+  </ul>
+
+  <section class="top-bar-section">
+    <!-- Right Nav Section -->
+    <ul class="right">
+      <li class="active"><a href="#">Know More</a></li>
+<!--
+      <li class="has-dropdown">
+        <a href="#">Right Button Dropdown</a>
+        <ul class="dropdown">
+          <li><a href="#">First link in dropdown</a></li>
+          <li class="active"><a href="#">Active link in dropdown</a></li>
+        </ul>
+      </li>
+-->
+    </ul>
+
+    <!-- Left Nav Section -->
+<!--
+    <ul class="left">
+      <li><a href="#">Left Nav Button</a></li>
+    </ul>
+-->
+  </section>
+</nav>
+        
+        
+    <div class="center">    <% flash.each do |name,msg| %>
 	<%= content_tag :div,msg,class:name %>
 <% end %>
 
 <%= form_tag(:action=>'attempt_login' ) do %>
-	Username:<%= text_field_tag(:username) %><br>
+	<div class="fields">Username:<%= text_field_tag(:username) %><br>
 	Password:<%= password_field_tag(:password) %><br>
+        </div>
+        <%= submit_tag("Login", :class => "small round button") %>
 
-	<%= submit_tag("Login") %>
-<% end %>
+        <% end %>
+        </div>
+    </body>
+</html>
