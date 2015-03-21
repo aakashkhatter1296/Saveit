@@ -13,7 +13,19 @@
     
     .fields {
         width:20vw;
-        margin-left:40vw;
+        //margin-left:40vw;
+    }
+    
+    body {
+        background: #dfdfdf;
+    }
+    
+    .panel{
+    
+        margin-top: 12vh;
+        width: 24vw;
+        margin-left:39vw;
+        padding:15px;
     }
     </style>
 </head>
@@ -54,7 +66,7 @@
 </nav>
         
         
-    <div class="center">    <% flash.each do |name,msg| %>
+    <div class="panel center">    <% flash.each do |name,msg| %>
 	<%= content_tag :div,msg,class:name %>
 <% end %>
 
