@@ -72,8 +72,13 @@
 	<%= content_tag :div,msg,class:name %>
 <% end %>
 
+<<<<<<< HEAD
 <%= form_tag(:action=>'attempt_login' ) do %>
 	<div class="fields">Username:<%= text_field_tag(:username) %><br>
+=======
+<%= form_tag(:action=>'attempt_login' ) do |f| %>
+	Username:<%= text_field_tag(:username) %><br>
+>>>>>>> ab81234c20cd7005e9da72ae4e4fde3260480096
 	Password:<%= password_field_tag(:password) %><br>
         </div>
         <%= submit_tag("Login", :class => "small round button") %>

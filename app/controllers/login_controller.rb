@@ -8,10 +8,10 @@ class LoginController < ApplicationController
   def attempt_login 
   	if params[:username].present? && params[:password].present?
   		@found_user = Hospital.where(:username=>params[:username],:password=>params[:password]).first
-  		cookies[:user_id] = @found_user.id
   	end	
 
   	if @found_user
+      cookies[:user_id] = @found_user.id
   		flash[:notice]="logged in"
   		redirect_to(:action=>'panel')
       
