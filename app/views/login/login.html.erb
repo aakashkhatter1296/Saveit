@@ -1,0 +1,10 @@
+<% flash.each do |name,msg| %>
+	<%= content_tag :div,msg,class:name %>
+<% end %>
+
+<%= form_for(:"hospital",:url => {:action=>'attempt_login'} ) do |f| %>
+	Username:<%= f.text_field :username %><br>
+	Password:<%= f.password_field :password %><br>
+
+	<%= submit_tag("Login") %>
+<% end %>

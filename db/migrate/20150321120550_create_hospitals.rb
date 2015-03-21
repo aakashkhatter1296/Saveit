@@ -4,7 +4,7 @@ class CreateHospitals < ActiveRecord::Migration
       t.string :name
       t.float :latitude
       t.float :longitude
-      t.int :amb_count
+      t.integer :amb_count
 
       t.timestamps null: false
     end
