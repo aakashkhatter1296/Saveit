@@ -10,6 +10,9 @@
                 
         <style>
         
+             .underline{
+                text-decoration: underline;
+             }
              .right {
                  
                 //text-align:center;   
@@ -18,7 +21,7 @@
     }
             
             body {
-            background: url("/assets/images/background.jpg");
+            background-image: url("/assets/images/background.jpg");
 
             background-size: cover;
             background-position:center;
@@ -54,13 +57,23 @@
             }
             
             .button {
-                background: rgb(255,20,20);
+                background: #e84e40;
                  border-radius:5px;
-                
             }
-    
+            .button:hover{
+              background: #b0120a‏;
+            }
+
+            .wrap{
+              border-radius: 7px; 
+              margin-right: 20px;
+            }
            
-            
+            .notification-panel{
+               background:rgba(255,255,255,0.40);
+               width:35vw;
+               height: 50vw;
+            }            
         </style>
     </head>
     
@@ -87,8 +100,8 @@
       <li class="has-dropdown">
         <a href="#">Account Settings</a>
         <ul class="dropdown">
-          <li class="active"><a href="#">Settings</a></li>
-          <li><a href="#">Sign Out</a></li>
+          <li ><a href="#">Settings</a></li>
+          <li class="active"><a href = "/login/login">Sign Out</a></li>
         </ul>
       </li>
 
@@ -102,24 +115,24 @@
 -->
   </section>
 </nav>
-    
-    <div id ="notification_panel">
-	<h1>Notification Panel</h1>
-	<div id ="notifications">
-		
-	</div>
-</div>
+
+  <div id ="notification_panel">
+  	<h1 class="underline">Notification Panel</h1>
+  	<div id ="notifications">
+  	 
+  	</div>
+  </div>
     
     <div class="right">
 <div class="wrap">
 
-<h1 class="">Available Ambulances</h1>
+<h1 class="underline">Available Ambulances</h1>
 
 <div id="count-container">
-	<button type="button" class="medium arrow-up button" id ="plus">ADD</button>
+	<button type="button" class="large button round alert" id ="plus">ADD</button>
 	<div id="count" class="count"><%= @hospital.ambulance_count %></div>
     
-	<button type="button" class="medium button" id="minus">SUB</button>	
+	<button type="button" class="large button round alert" id="minus">SUB</button>	
 </div>
     </div>
 <script>
@@ -130,11 +143,15 @@
       $("#count").html(data.ambulance_count);
     });
 	});
+  $("#minus").click(function(){
 
-	$("#minus").click(function(){
 		$.post("/add_minus/minus", function(data) {
 			$("#count").html(data.ambulance_count);
 		});
 	});
+  setTimeout(function(){ 
+    $.post("/login/notification",function(){
+        $("#notifications").html(data.latitude+" "+data.longitude);
+    }), 5000);
 
 </script>

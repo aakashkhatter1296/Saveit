@@ -12,7 +12,6 @@ class LoginController < ApplicationController
 
     if @found_user
       cookies[:user_id] = @found_user.id
-      flash[:notice]="logged in"
       redirect_to(:action=>'panel')
     else
       flash[:notice]="invalid details"
@@ -20,8 +19,13 @@ class LoginController < ApplicationController
     end
   end 
   def panel
-    
     @hospital = Hospital.find(cookies[:user_id])
+  end
+  def notification
+    @hosital = Hospital.find(cookies[:user_id])
+    @noti = @hospital.routes.all.limit(5)
+    render json: @noti, result: :ok
+
   end
   
 
