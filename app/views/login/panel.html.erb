@@ -76,11 +76,10 @@
           padding-top: 2vh;
           background: rgba(255, 255, 255, 0.40);
           margin-top: 70px;
-          height: 60%;
+          height: 80vh;
           text-align: center;
           border-radius: 7px;
           margin-left: 20px;
-
 
       }
   </style>
@@ -159,10 +158,11 @@
         });
     });
     setTimeout(function () {
-        $.post("/login/notification", function (data) {(
-                console.log(data))
+        $.post("/login/notification", function (data) {
+            (
+                    console.log(data))
             for (var i = 0; i < data.length; i++) {
-                $("#notifications").append(data[i].latitude + " " + data[i].longitude + "<br>");
+                $("#notifications").append("Latitude: "+ data[i].latitude + ", Logitude: " + data[i].longitude + "<br>");
             }
         })
     }, 5000);

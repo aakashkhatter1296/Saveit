@@ -15,7 +15,7 @@ class LoginController < ApplicationController
       cookies[:user_id] = @found_user.id
       redirect_to(:action=>'panel')
     else
-      flash[:notice]="invalid details"
+      flash[:notice]="Invalid login credentials!"
       redirect_to(:action=>'login')
     end
   end 
