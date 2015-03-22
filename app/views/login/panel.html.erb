@@ -1,157 +1,160 @@
 <!DOCTYPE html>
 <html>
 
-    <head>
-	<title>LOG IN</title>
-	<link rel="stylesheet" href="/assets/stylesheets/foundation.min.css"/>
-    <link rel="stylesheet" href="/assets/stylesheets/normalize.css"/>
-    <script src="/assets/javascripts/foundation.min.js"></script>
-        
-                
-        <style>
-        
-             .underline{
-                text-decoration: underline;
-             }
-             .right {
-                 
-                //text-align:center;   
-                //margin-top:-21px;
-            //    margin-left:27vw; 
-    }
-            
-            body {
-            background-image: url("/assets/images/background.jpg");
+<head>
+  <title>LOG IN</title>
+  <link rel="stylesheet" href="/assets/stylesheets/foundation.min.css"/>
+  <link rel="stylesheet" href="/assets/stylesheets/normalize.css"/>
+  <script src="/assets/javascripts/foundation.min.js"></script>
 
-            background-size: cover;
-            background-position:center;
-    }
-    
-         .name:hover {
-    
-       color:#000;
-    }
-            
-            .count {
-            
-                font-size:6vmax;
-                padding:0;
-                margin:0;
-                font-weight:bold;
-            }
-            
-            #minus {
-            
-                margin-top:0px;
-            }
-            
-            .wrap {
-                
-                width:35vw;
-                padding-top:2vh;
-                background:rgba(255,255,255,0.40);
-                margin-top:0;
-                height:100%;
-                text-align:center;
-                
-            }
-            
-            .button {
-                background: #e84e40;
-                 border-radius:5px;
-            }
-            .button:hover{
-              background: #b0120a‏;
-            }
 
-            .wrap{
-              border-radius: 7px; 
-              margin-right: 20px;
-            }
-           
-            .notification-panel{
-               background:rgba(255,255,255,0.40);
-               width:35vw;
-               height: 50vw;
-            }            
-        </style>
-    </head>
-    
-   
-    
+  <style>
+
+      .underline {
+          text-decoration: underline;
+      }
+
+      .right {
+
+      / / text-align : center;
+      / / margin-top : - 21 px;
+      / / margin-left : 27 vw;
+      }
+
+      body {
+          background-image: url("/assets/images/background.jpg");
+
+          background-size: cover;
+          background-position: center;
+      }
+
+      .name:hover {
+
+          color: #000;
+      }
+
+      .count {
+
+          font-size: 6vmax;
+          padding: 0;
+          margin: 0;
+          font-weight: bold;
+      }
+
+      #minus {
+
+          margin-top: 0px;
+      }
+
+      .wrap {
+
+          width: 35vw;
+          padding-top: 2vh;
+          background: rgba(255, 255, 255, 0.40);
+          margin-top: 0;
+          height: 100%;
+          text-align: center;
+
+      }
+
+      .button {
+          background: #e84e40;
+          border-radius: 5px;
+      }
+
+      .button:hover {
+          background: #b0120a‏;
+      }
+
+      .wrap {
+          border-radius: 7px;
+          margin-right: 20px;
+      }
+
+      .notification-panel {
+          background: rgba(255, 255, 255, 0.40);
+          width: 35vw;
+          height: 50vw;
+      }
+  </style>
+</head>
+
+
 <body>
-    <nav class="top-bar" data-topbar role="navigation">
+<nav class="top-bar" data-topbar role="navigation">
   <ul class="title-area">
     <li class="name">
       <h1><a href="#" class="tit"><%= @hospital.name %> Interface</a></h1>
     </li>
-     <!-- Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone -->
+    <!-- Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone -->
     <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
   </ul>
 
   <section class="top-bar-section">
-      
-      
-      
+
+
     <!-- Right Nav Section -->
     <ul class="right">
-<!--      <li class="active"><a href="#"></a></li>-->
+      <!--      <li class="active"><a href="#"></a></li>-->
 
       <li class="has-dropdown">
         <a href="#">Account Settings</a>
         <ul class="dropdown">
-          <li ><a href="#">Settings</a></li>
-          <li class="active"><a href = "/login/login">Sign Out</a></li>
+          <li><a href="#">Settings</a></li>
+          <li class="active"><a href="/login/login">Sign Out</a></li>
         </ul>
       </li>
 
     </ul>
 
     <!-- Left Nav Section -->
-<!--
-    <ul class="left">
-      <li><a href="#">Left Nav Button</a></li>
-    </ul>
--->
+    <!--
+        <ul class="left">
+          <li><a href="#">Left Nav Button</a></li>
+        </ul>
+    -->
   </section>
 </nav>
 
-  <div id ="notification_panel">
-  	<h1 class="underline">Notification Panel</h1>
-  	<div id ="notifications">
-  	 
-  	</div>
+<div id="notification_panel">
+  <h1 class="underline">Notification Panel</h1>
+
+  <div id="notifications">
+
   </div>
-    
-    <div class="right">
-<div class="wrap">
-
-<h1 class="underline">Available Ambulances</h1>
-
-<div id="count-container">
-	<button type="button" class="large button round alert" id ="plus">ADD</button>
-	<div id="count" class="count"><%= @hospital.ambulance_count %></div>
-    
-	<button type="button" class="large button round alert" id="minus">SUB</button>	
 </div>
+
+<div class="right">
+  <div class="wrap">
+
+    <h1 class="underline">Available Ambulances</h1>
+
+    <div id="count-container">
+      <button type="button" class="large button round alert" id="plus">ADD</button>
+      <div id="count" class="count"><%= @hospital.ambulance_count %></div>
+
+      <button type="button" class="large button round alert" id="minus">SUB</button>
     </div>
+  </div>
+</div>
 <script>
 
-	$("#plus").click(function(){
+    $("#plus").click(function () {
 
-    $.post("/add_minus/plus", function(data) {
-      $("#count").html(data.ambulance_count);
+        $.post("/add_minus/plus", function (data) {
+            $("#count").html(data.ambulance_count);
+        });
     });
-	});
-  $("#minus").click(function(){
+    $("#minus").click(function () {
 
-		$.post("/add_minus/minus", function(data) {
-			$("#count").html(data.ambulance_count);
-		});
-	});
-  setTimeout(function(){ 
-    $.post("/login/notification",function(){
-        $("#notifications").html(data.latitude+" "+data.longitude);
-    }), 5000);
+        $.post("/add_minus/minus", function (data) {
+            $("#count").html(data.ambulance_count);
+        });
+    });
+    setTimeout(function () {
+        $.post("/login/notification", function () {
+            $("#notifications").html(data.latitude + " " + data.longitude);
+        })
+    }, 5000);
 
 </script>
