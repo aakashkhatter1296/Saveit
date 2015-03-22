@@ -1,9 +1,10 @@
+
 <!DOCTYPE html>
 <html>
 
 <head>
-	<title>LOG IN</title>
-	<link rel="stylesheet" href="/assets/stylesheets/foundation.min.css"/>
+  <title>LOG IN</title>
+  <link rel="stylesheet" href="/assets/stylesheets/foundation.min.css"/>
     <link rel="stylesheet" href="/assets/stylesheets/normalize.css"/>
     <script src="/assets/javascripts/foundation.min.js"></script>
 <style>
@@ -15,11 +16,19 @@
         width:20vw;
         //margin-left:40vw;
     }
-    
+    .red{
+      background-color:  #e84e40; 
+    }
+    .red:hover{
+
+    }
     body {
         background: #dfdfdf;
     }
-    
+    .active{
+            background-color:  #e84e40 ;
+
+    }
     .panel{
         
         border-radius:5px;
@@ -34,52 +43,36 @@
     
     <body>
         
-        <nav class="top-bar" data-topbar role="navigation">
+        <nav class="top-bar center" data-topbar role="navigation">
   <ul class="title-area">
     <li class="name">
-      <h1><a href="#">Hospitals Interface</a></h1>
+      <h1 class= "center"><a href="#">SaveIt</a></h1>
     </li>
-     <!-- Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone -->
+    
     <li class="toggle-topbar menu-icon"><a href="#"><span>LOG IN</span></a></li>
   </ul>
 
-  <section class="top-bar-section">
-    <!-- Right Nav Section -->
+ <!-- <section class="top-bar-section red">
     <ul class="right">
-      <li class="active"><a href="#">Know More</a></li>
-<!--
-      <li class="has-dropdown">
-        <a href="#">Right Button Dropdown</a>
-        <ul class="dropdown">
-          <li><a href="#">First link in dropdown</a></li>
-          <li class="active"><a href="#">Active link in dropdown</a></li>
-        </ul>
-      </li>
--->
-    </ul>
-
-    <!-- Left Nav Section -->
-<!--
-    <ul class="left">
-      <li><a href="#">Left Nav Button</a></li>
+      <li class="active"><a href="#" class = "red">Know More</a></li>
     </ul>
 -->
   </section>
 </nav>
         
         
-    <div class="panel center">    <% flash.each do |name,msg| %>
-	<%= content_tag :div,msg,class:name %>
-<% end %>
+    <div class="panel center">    
+      <% flash.each do |name,msg| %>
+        <%= content_tag :div,msg,class:name %>
+      <% end %>
 
-<%= form_tag(:action=>'attempt_login' ) do |f| %>
-	Username:<%= text_field_tag(:username) %><br>
+      <%= form_tag(:action=>'attempt_login' ) do |f| %>
+        Username:<%= text_field_tag(:username) %><br>
+        Password:<%= password_field_tag(:password) %><br>    
+        <%= submit_tag("Login", :class => "small round button alert red") %>
+      <% end %>
 
-	Password:<%= password_field_tag(:password) %><br>
-        
-        <%= submit_tag("Login", :class => "small round button") %>
-
-        <% end %>
-        </div>
-    </body>
+</div>
+    </div>
+</body>
 </html>

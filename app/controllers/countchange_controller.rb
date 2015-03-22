@@ -1,0 +1,2 @@
+class CountchangeController < ApplicationController
+end
