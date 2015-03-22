@@ -3,26 +3,25 @@
 
     <head>
 	<title>LOG IN</title>
-	<link rel="stylesheet" href="../../assets/stylesheets/foundation.min.css"/>
-    <link rel="stylesheet" href="../../assets/stylesheets/normalize.css"/>
-    <script src="../../assets/javascripts/foundation.min.js"></script>
+	<link rel="stylesheet" href="/assets/stylesheets/foundation.min.css"/>
+    <link rel="stylesheet" href="/assets/stylesheets/normalize.css"/>
+    <script src="/assets/javascripts/foundation.min.js"></script>
         
                 
         <style>
         
-             .center {
+             .right {
                  
-                 text-align:center;   
-                 margin-top:-21px;
-                margin-left:27vw; 
+                //text-align:center;   
+                //margin-top:-21px;
+            //    margin-left:27vw; 
     }
             
-            html {
-        background: url("http://hd.wallpaperswide.com/thumbs/medical_symbol-t2.jpg");
-               -webkit-background-size: cover;
-              -moz-background-size: cover;
-            -o-background-size: cover;
-          background-size: cover;
+            body {
+            background: url("/assets/images/background.jpg");
+
+            background-size: cover;
+            background-position:center;
     }
     
          .name:hover {
@@ -32,7 +31,7 @@
             
             .count {
             
-                font-size:18vmax;
+                font-size:6vmax;
                 padding:0;
                 margin:0;
                 font-weight:bold;
@@ -45,13 +44,22 @@
             
             .wrap {
                 
-                width:50vw;
-                padding-top:10vh;
-               background:rgba(0,0,0,0.15);
+                width:35vw;
+                padding-top:2vh;
+                background:rgba(255,255,255,0.40);
                 margin-top:0;
+                height:100%;
                 text-align:center;
                 
             }
+            
+            .button {
+                background: rgb(255,20,20);
+                 border-radius:5px;
+                
+            }
+    
+           
             
         </style>
     </head>
@@ -74,16 +82,16 @@
       
     <!-- Right Nav Section -->
     <ul class="right">
-      <li class="active"><a href="#">Know More</a></li>
-<!--
+<!--      <li class="active"><a href="#"></a></li>-->
+
       <li class="has-dropdown">
-        <a href="#">Right Button Dropdown</a>
+        <a href="#">Account Settings</a>
         <ul class="dropdown">
-          <li><a href="#">First link in dropdown</a></li>
-          <li class="active"><a href="#">Active link in dropdown</a></li>
+          <li class="active"><a href="#">Settings</a></li>
+          <li><a href="#">Sign Out</a></li>
         </ul>
       </li>
--->
+
     </ul>
 
     <!-- Left Nav Section -->
@@ -94,31 +102,39 @@
 -->
   </section>
 </nav>
-    <div class="center">
-<div class="wrap">
-<div id ="notification_panel">
+    
+    <div id ="notification_panel">
 	<h1>Notification Panel</h1>
 	<div id ="notifications">
 		
 	</div>
 </div>
+    
+    <div class="right">
+<div class="wrap">
 
+<h1 class="">Available Ambulances</h1>
 
 <div id="count-container">
-	<button type="button" class="large round button" id ="plus">Plus</button>
+	<button type="button" class="medium arrow-up button" id ="plus">ADD</button>
 	<div id="count" class="count"><%= @hospital.ambulance_count %></div>
-	<button type="button" class="large round button" id="minus">Minus</button>	
+    
+	<button type="button" class="medium button" id="minus">SUB</button>	
 </div>
     </div>
 <script>
+
 	$("#plus").click(function(){
-		$.post("/login/plus", function(data) {
-			$("#count").html(data.ambulance_count);
-		});
+
+    $.post("/add_minus/plus", function(data) {
+      $("#count").html(data.ambulance_count);
+    });
 	});
+
 	$("#minus").click(function(){
-		$.post("/login/minus", function(data) {
+		$.post("/add_minus/minus", function(data) {
 			$("#count").html(data.ambulance_count);
 		});
 	});
+
 </script>

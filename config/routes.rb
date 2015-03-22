@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  get 'add_minus/plus'
+
+  get 'add_minus/minus'
+
   root 'login#login'
 
   # Aayush Ranaut Routes
