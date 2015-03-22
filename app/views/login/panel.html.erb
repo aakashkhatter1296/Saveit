@@ -119,20 +119,22 @@
 	<button type="button" class="medium arrow-up button" id ="plus">ADD</button>
 	<div id="count" class="count"><%= @hospital.ambulance_count %></div>
     
-<!--<%= image_tag("bg.jpg") %> -->
-    
 	<button type="button" class="medium button" id="minus">SUB</button>	
 </div>
     </div>
 <script>
+
 	$("#plus").click(function(){
-		$.post("/login/plus", function(data) {
-			$("#count").html(data.ambulance_count);
-		});
+
+    $.post("/add_minus/plus", function(data) {
+      $("#count").html(data.ambulance_count);
+    });
 	});
+
 	$("#minus").click(function(){
-		$.post("/login/minus", function(data) {
+		$.post("/add_minus/minus", function(data) {
 			$("#count").html(data.ambulance_count);
 		});
 	});
+
 </script>

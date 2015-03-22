@@ -23,20 +23,6 @@ class LoginController < ApplicationController
     
     @hospital = Hospital.find(cookies[:user_id])
   end
-  def plus
-    @hospital = Hospital.find(cookies[:user_id])
-    @hospital.ambulance_count+=1
-    @hospital.save
-    render json: @hospital, result: :ok
-
-  end
-  def minus
-    @hospital = Hospital.find(cookies[:user_id])
-    if @hospital.ambulance_count > 0
-      @hospital.ambulance_count-=1
-      @hospital.save
-      render json: @hospital, result: :ok
-    end
-  end
+  
 
 end
