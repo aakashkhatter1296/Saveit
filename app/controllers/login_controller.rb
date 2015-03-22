@@ -12,7 +12,6 @@ class LoginController < ApplicationController
 
     if @found_user
       cookies[:user_id] = @found_user.id
-      flash[:notice]="logged in"
       redirect_to(:action=>'panel')
     else
       flash[:notice]="invalid details"
