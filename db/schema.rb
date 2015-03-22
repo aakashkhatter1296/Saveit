@@ -27,7 +27,6 @@ ActiveRecord::Schema.define(version: 20150321224158) do
   end
 
   create_table "routes", force: :cascade do |t|
-    t.integer  "hosp_id",     limit: 4
     t.float    "latitude",    limit: 24
     t.float    "longitude",   limit: 24
     t.string   "device_id",   limit: 255
