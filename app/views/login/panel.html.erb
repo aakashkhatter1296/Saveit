@@ -115,7 +115,7 @@
   </section>
 </nav>
 
-<div id="notification_panel">
+<div id="notification_panel" class="left">
   <h1 class="underline">Notification Panel</h1>
 
   <div id="notifications">
@@ -151,8 +151,11 @@
         });
     });
     setTimeout(function () {
-        $.post("/login/notification", function (data) {
-            $("#notifications").html(data.latitude + " " + data.longitude);
+        $.post("/login/notification", function (data) {(
+                console.log(data))
+            for (var i = 0; i < data.length; i++) {
+                $("#notifications").append(data[i].latitude + " " + data[i].longitude + "<br>");
+            }
         })
     }, 5000);
 
