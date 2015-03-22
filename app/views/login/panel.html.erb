@@ -51,7 +51,7 @@
           width: 35vw;
           padding-top: 2vh;
           background: rgba(255, 255, 255, 0.40);
-          margin-top: 0;
+          margin-top: 70px;
           height: 100%;
           text-align: center;
 
@@ -72,7 +72,15 @@
       }
 
       #notification_panel {
+          width: 35vw;
+          padding-top: 2vh;
           background: rgba(255, 255, 255, 0.40);
+          margin-top: 70px;
+          height: 60%;
+          text-align: center;
+          border-radius: 7px;
+          margin-left: 20px;
+
 
       }
   </style>
@@ -115,7 +123,7 @@
   </section>
 </nav>
 
-<div id="notification_panel">
+<div id="notification_panel" class="left">
   <h1 class="underline">Notification Panel</h1>
 
   <div id="notifications">
@@ -150,10 +158,5 @@
             $("#count").html(data.ambulance_count);
         });
     });
-    setTimeout(function () {
-        $.post("/login/notification", function (data) {
-            $("#notifications").html(data.latitude + " " + data.longitude);
-        })
-    }, 5000);
 
 </script>
