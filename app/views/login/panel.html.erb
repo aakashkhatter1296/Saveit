@@ -151,7 +151,7 @@
         });
     });
     setTimeout(function () {
-        $.post("/login/notification", function () {
+        $.post("/login/notification", function (data) {
             $("#notifications").html(data.latitude + " " + data.longitude);
         })
     }, 5000);
