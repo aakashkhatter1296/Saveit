@@ -8,6 +8,7 @@ class CreateHospitals < ActiveRecord::Migration
       t.float :longitude
       t.integer :ambulance_count
       t.integer :hospital_type
+      t.float :distance
 
       t.timestamps null: false
     end

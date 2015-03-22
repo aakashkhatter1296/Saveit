@@ -21,6 +21,7 @@ ActiveRecord::Schema.define(version: 20150321224158) do
     t.float    "longitude",       limit: 24
     t.integer  "ambulance_count", limit: 4
     t.integer  "hospital_type",   limit: 4
+    t.float    "distance",        limit: 24
     t.datetime "created_at",                  null: false
     t.datetime "updated_at",                  null: false
   end
