@@ -23,7 +23,7 @@ class LoginController < ApplicationController
     @hospital = Hospital.find(cookies[:user_id])
   end
   def notification
-    @hosital = Hospital.find(cookies[:user_id])
+    @hospital = Hospital.find(cookies[:user_id])
     @noti = @hospital.routes.all.limit(5)
     render json: @noti, result: :ok
 
