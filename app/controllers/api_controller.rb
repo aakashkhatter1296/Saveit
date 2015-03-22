@@ -63,7 +63,12 @@ class ApiController < ApplicationController
     end
 
     @route = Route.new
-    
+
+    @route.latitude = params[:latitude]
+    @route.longitude = params[:longitude]
+    @route.device_id = params[:device_id]
+    @route.hospital_id = final[0][:id]
+    @route.save
 
     render json: { "search_results" => final.slice(0, 5)}
   end
