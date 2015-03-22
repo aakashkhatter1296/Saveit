@@ -62,7 +62,8 @@ class ApiController < ApplicationController
       final[index][:distance_km] = hash["rows"][0]["elements"][0]["distance"]["text"]
     end
 
-#    render json: response
+    @route = Route.new
+    
 
     render json: { "search_results" => final.slice(0, 5)}
   end
