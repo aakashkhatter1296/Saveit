@@ -28,6 +28,7 @@ gem 'bcrypt', '~> 3.1.7'
 
 gem 'haversine', '~>0.3'
 gem 'httparty', '~>0.13.3'
+gem ‘pg’
 
 # Use Unicorn as the app server
 # gem 'unicorn'
