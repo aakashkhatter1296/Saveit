@@ -1,78 +1,75 @@
-
-<!DOCTYPE html>
-<html>
-
-<head>
-  <title>LOG IN</title>
-  <link rel="stylesheet" href="/assets/stylesheets/foundation.min.css"/>
-    <link rel="stylesheet" href="/assets/stylesheets/normalize.css"/>
-    <script src="/assets/javascripts/foundation.min.js"></script>
 <style>
-    .center {
-        text-align:center;   
-    }
-    
     .fields {
-        width:20vw;
-        //margin-left:40vw;
+        width: 20vw;
+    / / margin-left : 40 vw;
     }
-    .red{
-      background-color:  #e84e40; 
+
+    .red {
+        background-color: #e84e40;
     }
-    .red:hover{
+
+    .red:hover {
 
     }
+
     body {
         background: #dfdfdf;
     }
-    .active{
-            background-color:  #e84e40 ;
+
+    .active {
+        background-color: #e84e40;
 
     }
-    .panel{
-        
-        border-radius:5px;
+
+    .panel {
+        border-radius: 5px;
         margin-top: 12vh;
         width: 24vw;
-        margin-left:39vw;
-        padding:25px;
-        padding-top:30px;
+        margin-left: 39vw;
+        padding: 25px;
+        padding-top: 30px;
+        -webkit-box-shadow: 0px 2px 1px #bbb;
+        -moz-box-shadow: 0px 2px 1px #bbb;
+        box-shadow: 0px 2px 1px #bbb;
     }
-    </style>
-</head>
-    
-    <body>
-        
-        <nav class="top-bar center" data-topbar role="navigation">
+</style>
+
+<nav class="top-bar" data-topbar role="navigation">
   <ul class="title-area">
     <li class="name">
-      <h1 class= "center"><a href="#">SaveIt</a></h1>
+      <h1><a href="#">SaveIt</a></h1>
     </li>
-    
-    <li class="toggle-topbar menu-icon"><a href="#"><span>LOG IN</span></a></li>
   </ul>
-
- <!-- <section class="top-bar-section red">
-    <ul class="right">
-      <li class="active"><a href="#" class = "red">Know More</a></li>
-    </ul>
--->
-  </section>
 </nav>
-        
-        
-    <div class="panel center">    
-      <% flash.each do |name,msg| %>
-        <%= content_tag :div,msg,class:name %>
-      <% end %>
 
-      <%= form_tag(:action=>'attempt_login' ) do |f| %>
-        Username:<%= text_field_tag(:username) %><br>
-        Password:<%= password_field_tag(:password) %><br>    
-        <%= submit_tag("Login", :class => "small round button alert red") %>
-      <% end %>
+
+<div class="panel">
+  <% flash.each do |name, msg| %>
+      <%= content_tag :div, msg, class: name %>
+  <% end %>
+
+  <%= form_tag(:action => 'attempt_login') do |f| %>
+      <div class="row">
+        <div class="large-12 columns">
+          <label>Username
+            <%= text_field_tag(:username) %>
+          </label>
+        </div>
+      </div>
+      <div class="row">
+        <div class="large-12 columns">
+          <label>Password
+            <%= password_field_tag(:password) %>
+          </label>
+        </div>
+      </div>
+      <div class="row">
+        <div class="large-12 columns">
+          <%= submit_tag("Login", :class => "tiny radius button alert red") %>
+        </div>
+      </div>
+
+  <% end %>
 
 </div>
-    </div>
-</body>
-</html>
+
